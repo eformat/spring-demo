@@ -118,8 +118,8 @@ oc new-build --strategy=source --name=demo-gradle-s2i --binary -l app=demo-gradl
 oc start-build demo-gradle-s2i --from-file=build/libs/demo-gradle-0.0.1-SNAPSHOT.jar
 oc new-app demo-gradle-s2i
 oc expose service demo-gradle-s2i
-oc set probe dc/demo-gradle-s2i --liveness --get-url=http://:8080//actuator/health --initial-delay-seconds=180 --timeout-seconds=1
-oc set probe dc/demo-gradle-s2i --readiness --get-url=http://:8080//actuator/health --initial-delay-seconds=10 --timeout-seconds=1
+oc set probe dc/demo-gradle-s2i --liveness --get-url=http://:8080/actuator/health --initial-delay-seconds=180 --timeout-seconds=1
+oc set probe dc/demo-gradle-s2i --readiness --get-url=http://:8080/actuator/health --initial-delay-seconds=10 --timeout-seconds=1
 ```
 
 Test on OpenShift
